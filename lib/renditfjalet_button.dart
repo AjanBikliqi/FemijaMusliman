@@ -7,7 +7,8 @@ import 'package:femija_musliman/rendit_fjalet_quiz.dart';
 import 'dataset.dart';
 
 class RenditFjaletButton extends StatefulWidget {
-  const RenditFjaletButton({Key? key}) : super(key: key);
+  RenditFjaletButton({required this.QuizList, Key? key}) : super(key: key);
+  late List QuizList;
 
   @override
   State<RenditFjaletButton> createState() => _RenditFjaletButtonState();
@@ -72,7 +73,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                       child: Wrap(
                           direction: Axis.horizontal,
                           spacing: 20,
-                          children: List<Widget>.generate(5, (int index) {
+                          children: List<Widget>.generate(widget.QuizList.length, (int index) {
                             return GestureDetector(
                                 onTap: () {
                                   Navigator.push(
@@ -83,7 +84,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                                 },
                                 child: Chip(
                                   label: Text(
-                                    data![0].word[index++].toString(),
+                                    widget.QuizList[index].toString(),
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         color: Colors.white,

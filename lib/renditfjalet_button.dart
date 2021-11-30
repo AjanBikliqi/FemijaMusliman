@@ -72,26 +72,25 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                       child: Wrap(
                           direction: Axis.horizontal,
                           spacing: 20,
-                          children: List<Widget>.generate(2, (int index) {
+                          children: List<Widget>.generate(5, (int index) {
                             return GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            RenditFjaletScreen()));
-                              },
-                              child: Chip(
-                                label: Text(
-                                  data![index].word[0].toString(),
-                                  style: TextStyle(
-                                      fontSize: 20.sp,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                backgroundColor: Color(0xFF50CFFD),
-                              ),
-                            );
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              RenditFjaletScreen()));
+                                },
+                                child: Chip(
+                                  label: Text(
+                                    data![0].word[index++].toString(),
+                                    style: TextStyle(
+                                        fontSize: 20.sp,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  backgroundColor: Color(0xFF50CFFD),
+                                ));
                           })))
                 ]);
               }

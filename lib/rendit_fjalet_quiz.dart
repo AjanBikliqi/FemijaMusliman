@@ -63,7 +63,7 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             RenditFjaletButton(
-                                              QuizList: data[index].word,
+                                              QuizList: data[index].word, /// Passing the data.word list into renditfjalet_button.dart from the index of the clicked button
                                             )));
                               },
                               child: Card(

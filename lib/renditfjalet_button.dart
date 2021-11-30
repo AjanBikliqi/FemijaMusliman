@@ -7,7 +7,7 @@ import 'package:femija_musliman/rendit_fjalet_quiz.dart';
 import 'dataset.dart';
 
 class RenditFjaletButton extends StatefulWidget {
-  RenditFjaletButton({required this.QuizList, Key? key}) : super(key: key);
+  RenditFjaletButton({required this.QuizList, Key? key}) : super(key: key); /// Asking for a list to be passed in from the other screen.
   late List QuizList;
 
   @override
@@ -73,7 +73,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                       child: Wrap(
                           direction: Axis.horizontal,
                           spacing: 20,
-                          children: List<Widget>.generate(widget.QuizList.length, (int index) {
+                          children: List<Widget>.generate(widget.QuizList.length, (int index) { /// Setting the length of the list equal to the number of words
                             return GestureDetector(
                                 onTap: () {
                                   Navigator.push(
@@ -84,7 +84,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                                 },
                                 child: Chip(
                                   label: Text(
-                                    widget.QuizList[index].toString(),
+                                    widget.QuizList[index].toString(), /// Displaying words from the list based on the index inside the future builder
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         color: Colors.white,

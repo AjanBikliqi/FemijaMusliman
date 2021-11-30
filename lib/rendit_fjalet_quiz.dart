@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'dataset.dart';
 
 class RenditFjaletScreen extends StatefulWidget {
+
   @override
   State<RenditFjaletScreen> createState() => _RenditFjaletScreenState();
 }
@@ -61,7 +62,9 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            RenditFjaletButton()));
+                                            RenditFjaletButton(
+                                              QuizList: data[index].word,
+                                            )));
                               },
                               child: Card(
                                 elevation: 3.0,

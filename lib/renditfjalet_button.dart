@@ -75,9 +75,20 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                           children: List<Widget>.generate(
                               widget.QuizList.length, (int index) {
                             var chipsText = widget.QuizList[index].toString();
+                            int _selectedChipsIndex;
+
+                            final bool active;
+
+                            void _handleTap(int index) {
+                              setState(() {
+                                _selectedChipsIndex = index;
+                              });
+                            }
 
                             return GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  _handleTap(index);
+                                },
                                 child: Chip(
                                   label: Text(
                                     chipsText,

@@ -20,6 +20,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
   int counter = 1;
   int counterForChips = 0;
   bool showWord = true;
+  int _selectedChipsIndex = 0;
 
   void initState() {
     super.initState();
@@ -75,9 +76,6 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                           children: List<Widget>.generate(
                               widget.QuizList.length, (int index) {
                             var chipsText = widget.QuizList[index].toString();
-                            int _selectedChipsIndex;
-
-                            final bool active;
 
                             void _handleTap(int index) {
                               setState(() {
@@ -99,7 +97,32 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                                   ),
                                   backgroundColor: Color(0xFF50CFFD),
                                 ));
-                          })))
+                          }))),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 170, left: 40),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        " ${widget.QuizList[_selectedChipsIndex].toString()}",
+                        style: TextStyle(
+                            fontSize: 20.sp, color: Color(0xFF50CFFD), fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 155),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Divider(
+                          endIndent: 30,
+                          thickness: 5,
+                          color: Colors.pinkAccent,
+                        ),
+                      ),
+                    ),
+                  )
                 ]);
               }
               return Center(child: CircularProgressIndicator());
@@ -124,7 +147,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                     borderRadius: BorderRadius.circular(10.0)),
                 child: Container(
                   child: Align(
-                      alignment: Alignment.center,
+                      alignment: http://Alignment.center,
                       child: Container(
                         child: Text('Heelo',
                             style: TextStyle(

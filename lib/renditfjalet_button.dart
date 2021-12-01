@@ -19,6 +19,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
 
   int counter = 1;
   int counterForChips = 0;
+  bool showWord = true;
 
   void initState() {
     super.initState();
@@ -57,8 +58,6 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List<QuizInfo>? data = snapshot.data;
-
-                //String displayWords = data![3].word[counter].toString();
                 return Stack(children: [
                   Container(
                     decoration: BoxDecoration(
@@ -73,18 +72,15 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton> {
                       child: Wrap(
                           direction: Axis.horizontal,
                           spacing: 20,
-                          children: List<Widget>.generate(widget.QuizList.length, (int index) {
+                          children: List<Widget>.generate(
+                              widget.QuizList.length, (int index) {
+                            var chipsText = widget.QuizList[index].toString();
+
                             return GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              RenditFjaletScreen()));
-                                },
+                                onTap: () {},
                                 child: Chip(
                                   label: Text(
-                                    widget.QuizList[index].toString(),
+                                    chipsText,
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         color: Colors.white,

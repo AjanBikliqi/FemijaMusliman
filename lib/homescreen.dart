@@ -2,6 +2,7 @@ import 'package:femija_musliman/rreth_nesh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:femija_musliman/main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:femija_musliman/rreth_nesh.dart';
 import 'rendit_fjalet_quiz.dart';
@@ -10,6 +11,7 @@ class ChooseQuiz extends StatelessWidget {
   final nameHolder;
 
   ChooseQuiz({@required this.nameHolder});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +46,11 @@ class ChooseQuiz extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Selam Alejkum " + nameHolder,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 19.sp,
-                            fontWeight: FontWeight.bold),
+                        style: GoogleFonts.fredokaOne(
+                            textStyle: TextStyle(
+                              fontSize: 19.0.sp,
+                              color: Colors.white,
+                            )),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -65,7 +68,11 @@ class ChooseQuiz extends StatelessWidget {
             child: FlatButton(
               child: Text(
                 'Rreth nesh',
-                style: TextStyle(fontSize: 25),
+                style: GoogleFonts.fredokaOne(
+                    textStyle: TextStyle(
+                      fontSize: 22.0.sp,
+                      color: Colors.grey,
+                    )),
               ),
               color: Colors.transparent,
               textColor: Colors.grey,
@@ -87,10 +94,11 @@ class ChooseQuiz extends StatelessWidget {
                   color: Color(0xFFEF6E98),
                   child: Text(
                     "RENDIT \nFJALET",
-                    style: TextStyle(
-                        fontSize: 23.0.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.fredokaOne(
+                        textStyle: TextStyle(
+                          fontSize: 23.0.sp,
+                          color: Colors.white,
+                        )),
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
@@ -114,10 +122,11 @@ class ChooseQuiz extends StatelessWidget {
                   color: Color(0xFF0A869B),
                   child: Text(
                     "KUIZI",
-                    style: TextStyle(
-                        fontSize: 23.0.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.fredokaOne(
+                        textStyle: TextStyle(
+                          fontSize: 23.0.sp,
+                          color: Colors.white,
+                        )),
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
@@ -136,10 +145,11 @@ class ChooseQuiz extends StatelessWidget {
                   color: Color(0xFF50CFFD),
                   child: Text(
                     "KERKO FJALE",
-                    style: TextStyle(
-                        fontSize: 23.0.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.fredokaOne(
+                        textStyle: TextStyle(
+                          fontSize: 23.0.sp,
+                          color: Colors.white,
+                        )),
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),

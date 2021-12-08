@@ -1,5 +1,7 @@
 import 'package:femija_musliman/homescreen.dart';
+import 'package:femija_musliman/renditfjalet_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:femija_musliman/rreth_nesh.dart';
 
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
                 )));
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,10 +67,11 @@ class _HomePageState extends State<HomePage> {
                     child: new Center(
                       child: new Text(
                         "Si quhesh?",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 19.sp,
-                            fontWeight: FontWeight.bold),
+                        style: GoogleFonts.fredokaOne(
+                            textStyle: TextStyle(
+                              fontSize: 22.0.sp,
+                              color: Colors.white,
+                            )),
                         textAlign: TextAlign.center,
                       ),
                     )),
@@ -94,10 +98,11 @@ class _HomePageState extends State<HomePage> {
                               //textAlign: TextAlign.start,
                               decoration: null,
                               autofocus: true,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25.sp,
-                                  fontWeight: FontWeight.bold),
+                              style: GoogleFonts.fredokaOne(
+                                  textStyle: TextStyle(
+                                    fontSize: 25.0.sp,
+                                    color: Colors.white,
+                                  )),
                               textAlign: TextAlign.start,
                             ),
                           ),
@@ -148,10 +153,11 @@ class _HomePageState extends State<HomePage> {
                       color: Color(0xFF50CFFD),
                       child: Text(
                         "Fillo",
-                        style: TextStyle(
-                            fontSize: 23.0.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                        style: GoogleFonts.fredokaOne(
+                            textStyle: TextStyle(
+                              fontSize: 23.0.sp,
+                              color: Colors.white,
+                            )),
                       ),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
@@ -172,10 +178,11 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(bottom: 10),
                   child: new Text(
                     "www.arsye.com",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 19.sp,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.fredokaOne(
+                        textStyle: TextStyle(
+                          fontSize: 19.0.sp,
+                          color: Colors.grey,
+                        )),
                     textAlign: TextAlign.center,
                   ),
                 ),

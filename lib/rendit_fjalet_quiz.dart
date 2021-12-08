@@ -1,11 +1,14 @@
+import 'dart:async';
 import 'dart:convert';
+import 'package:femija_musliman/homescreen.dart';
 import 'package:femija_musliman/renditfjalet_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'dataset.dart';
+import 'homescreen.dart';
 
 class RenditFjaletScreen extends StatefulWidget {
-
   @override
   State<RenditFjaletScreen> createState() => _RenditFjaletScreenState();
 }
@@ -23,24 +26,34 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 10.h,
           backgroundColor: Color(0xFFEF6E98),
-          title: Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 80),
+          title: Row(children: [
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              color: Colors.white,
+              onPressed: () {},
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 45),
               child: Text(
                 "Rendit Fjalet",
-                style: TextStyle(fontSize: 23.sp),
+                style: GoogleFonts.fredokaOne(
+                    textStyle: TextStyle(
+                  fontSize: 22.0.sp,
+                  color: Colors.white,
+                )),
               ),
             ),
-          ),
+          ]),
         ),
         body: FutureBuilder<List<QuizInfo>?>(
             future: futureData,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List<QuizInfo>? data = snapshot.data;
+                data?.sort((a, b) => a.level.compareTo(b.level));
 
                 return Stack(children: [
                   Container(
@@ -75,12 +88,14 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                                   child: Align(
                                       alignment: Alignment.center,
                                       child: Container(
-                                        child: Text('${index + 1}',
-                                            style: TextStyle(
-                                              fontSize: 30.sp,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color(0xFF50CFFD),
-                                            )),
+                                        child: Text(
+                                          '${data[index].level}',
+                                          style: GoogleFonts.fredokaOne(
+                                              textStyle: TextStyle(
+                                            fontSize: 30.0.sp,
+                                            color: Color(0xFF50CFFD),
+                                          )),
+                                        ),
                                       )),
                                 ),
                               ),

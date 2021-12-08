@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:femija_musliman/main.dart';
 import 'package:femija_musliman/homescreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,16 +31,20 @@ class RrethNesh extends StatelessWidget {
               )))),
       Container(
         child: Padding(
-          padding: const EdgeInsets.only(top: 250, left: 35),
+          padding: const EdgeInsets.only(top: 250, left: 22),
           child: RichText(
             text: TextSpan(
               text: 'Pergaditi: ',
-              style: TextStyle(fontSize: 16.sp, color: Color(0xFF0A869B)),
+              style: GoogleFonts.fredokaOne(
+                  textStyle:
+                      TextStyle(fontSize: 15.0.sp, color: Color(0xFF0A869B))),
               children: <TextSpan>[
                 TextSpan(
-                    text: 'Ummu Muhamed Breznica',
-                    style:
-                        TextStyle(fontSize: 16.sp, color: Color(0xFF50CFFD))),
+                  text: 'Ummu Muhamed Breznica',
+                  style: GoogleFonts.fredokaOne(
+                      textStyle: TextStyle(
+                          fontSize: 16.0.sp, color: Color(0xFF50CFFD))),
+                ),
               ],
             ),
           ),
@@ -63,12 +68,16 @@ class RrethNesh extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: 'Kontrolloi: ',
-              style: TextStyle(fontSize: 16.sp, color: Color(0xFF0A869B)),
+              style: GoogleFonts.fredokaOne(
+                  textStyle:
+                      TextStyle(fontSize: 16.0.sp, color: Color(0xFF0A869B))),
               children: <TextSpan>[
                 TextSpan(
-                    text: 'Petrit Perçuku',
-                    style:
-                        TextStyle(fontSize: 16.sp, color: Color(0xFF50CFFD))),
+                  text: 'Petrit Perçuku',
+                  style: GoogleFonts.fredokaOne(
+                      textStyle: TextStyle(
+                          fontSize: 16.0.sp, color: Color(0xFF50CFFD))),
+                ),
               ],
             ),
           ),
@@ -83,39 +92,35 @@ class RrethNesh extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Text(
                 'Mundesuar nga',
-                style: TextStyle(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF50CFFD)),
+                style: GoogleFonts.fredokaOne(
+                    textStyle:
+                        TextStyle(fontSize: 22.0.sp, color: Color(0xFF50CFFD))),
               ),
             )),
       ),
       Container(
-          child: Padding(
-        padding: const EdgeInsets.only(bottom: 4),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Text(
-            'www.arsye.com',
-            style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 4),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text('www.arsye.com',
+                style: GoogleFonts.fredokaOne(
+                    textStyle:
+                        TextStyle(fontSize: 20.0.sp, color: Colors.grey))),
           ),
         ),
-      )),
+      ),
       Padding(
-        padding: const EdgeInsets.only(top: 100),
+        padding: const EdgeInsets.only(top: 130),
         child: Align(
           alignment: Alignment.center,
           child: Container(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
-              ),
+            child: TextButton(
               child: Text(
                 'femijamusliman.com',
-                style: TextStyle(fontSize: 20.sp, color: Color(0xFF50CFFD)),
+                style: GoogleFonts.fredokaOne(
+                    textStyle:
+                        TextStyle(fontSize: 22.0.sp, color: Color(0xFF50CFFD))),
               ),
               onPressed: () async =>
                   {await launch('https://femijamusliman.com')},

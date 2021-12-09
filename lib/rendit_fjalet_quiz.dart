@@ -43,10 +43,10 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                     textStyle: TextStyle(
                   fontSize: 22.0.sp,
                   color: Colors.white,
-                )),
-              ),
-            ),
-          ]),
+                ))
+              )
+            )
+          ])
         ),
         body: FutureBuilder<List<QuizInfo>?>(
             future: futureData,
@@ -94,14 +94,14 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                                               textStyle: TextStyle(
                                             fontSize: 30.0.sp,
                                             color: Color(0xFF50CFFD),
-                                          )),
-                                        ),
-                                      )),
-                                ),
-                              ),
+                                          ))
+                                        )
+                                      ))
+                                )
+                              )
                             );
-                          }),
-                        ),
+                          })
+                        )
                       ))
                 ]);
               } else if (snapshot.hasError) {
@@ -112,14 +112,3 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
   }
 }
 
-/*Text('${counter++}',
-                                style: TextStyle(
-                                  fontSize: 30.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF50CFFD),
-                                )),*/
-
-/*decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/lock_icon_small.png'))),*/

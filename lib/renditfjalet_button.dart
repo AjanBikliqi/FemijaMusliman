@@ -1,14 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
-
-import 'package:femija_musliman/rreth_nesh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:femija_musliman/rendit_fjalet_quiz.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 import 'dataset.dart';
 
 class QuizDescription {
@@ -21,7 +17,6 @@ class QuizDescription {
 class RenditFjaletButton extends StatefulWidget {
   RenditFjaletButton({required this.QuizList, Key? key}) : super(key: key);
   late List QuizList;
-  bool goToNextLevel = false;
 
   @override
   State<RenditFjaletButton> createState() => _RenditFjaletButtonState();
@@ -35,8 +30,6 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
 
   List<QuizDescription> quizList = [];
 
-  int counter = 1;
-  int counterForChips = 0;
   bool showWord = true;
   int _selectedChipsIndex = 0;
 
@@ -79,7 +72,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                       context,
                       MaterialPageRoute(
                           builder: (context) => RenditFjaletScreen()));
-                },
+                }
               ),
               Padding(
                   padding: const EdgeInsets.only(left: 40),
@@ -100,14 +93,14 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                 textStyle: TextStyle(
                               fontSize: 18.0.sp,
                               color: Colors.white,
-                            )),
+                            ))
                           )
-                        ],
-                      ),
-                    ),
-                  )),
-            ],
-          ),
+                        ]
+                      )
+                    )
+                  ))
+            ]
+          )
         ),
         body: FutureBuilder<List<QuizInfo>?>(
             future: futureData,
@@ -151,9 +144,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                           ),
                           onRatingUpdate: (rating) {
                             print(rating);
-                          },
-                        ),
-                      ),
+                          }
+                        )
+                      )
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -168,9 +161,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                             value: controller.value,
                             color: Colors.white,
                             backgroundColor: Colors.yellow,
-                          ),
-                        ),
-                      ),
+                          )
+                        )
+                      )
                     )
                   ]),
                   Padding(
@@ -225,7 +218,7 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                           quizList[_selectedChipsIndex].visible
                                               ? Color(0xff808080)
                                               : const Color(0xFF50CFFD)));
-                            }))),
+                            })))
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 170, left: 40),
@@ -251,16 +244,16 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                               textStyle: TextStyle(
                                             fontSize: 20.0.sp,
                                             color: Color(0xFF50CFFD),
-                                          )),
+                                          ))
                                         );
                                       })),
                                   Divider(
                                     endIndent: 20,
                                     thickness: 5,
                                     color: Colors.pinkAccent,
-                                  ),
-                                ],
-                              ),
+                                  )
+                                ]
+                              )
                             ),
                             IconButton(
                                 iconSize: 30,
@@ -272,9 +265,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                 icon: Icon(
                                   Icons.cancel,
                                   color: Colors.pinkAccent,
-                                )),
-                          ],
-                        )),
+                                ))
+                          ]
+                        ))
                   ),
                   Align(
                       alignment: Alignment.bottomCenter,
@@ -340,9 +333,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                             'assets/restartbutton.small.png',
                                                             height: 80,
                                                             width: 80,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                          )
+                                                        )
+                                                      )
                                                     ),
                                                     Align(
                                                       alignment: Alignment
@@ -358,7 +351,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                                     null &&
                                                                 result
                                                                     is List) {
-                                                              selectReportList[_selectedChipsIndex+1].title;
+                                                              selectReportList[
+                                                                      _selectedChipsIndex + 1]
+                                                                  .title;
                                                               setState(() {});
                                                             }
                                                             Navigator.of(
@@ -369,9 +364,9 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                             'assets/next_small.png',
                                                             height: 80,
                                                             width: 80,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                          )
+                                                        )
+                                                      )
                                                     ),
                                                     Center(
                                                       child: Padding(
@@ -383,17 +378,16 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                           'assets/threestars_big.png',
                                                           height: 200,
                                                           width: 200,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
+                                                        )
+                                                      )
+                                                    )
+                                                  ]
                                                 ),
                                                 height: height - 450,
                                                 width: width - 130,
                                               );
-                                            },
+                                            }
                                           ),
-                                          actions: <Widget>[],
                                           title: Padding(
                                             padding:
                                                 const EdgeInsets.only(top: 30),
@@ -404,45 +398,14 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                   textStyle: TextStyle(
                                                 fontSize: 25.0.sp,
                                                 color: Colors.white,
-                                              )),
-                                            )),
-                                          ),
+                                              ))
+                                            ))
+                                          )
                                         ));
-                              }))),
+                              })))
                 ]);
               }
               return Center(child: CircularProgressIndicator());
             }));
   }
 }
-
-/*child: Container(
-              width: 28.w,
-              height: 15.h,
-              child: Card(
-                 child: InkWell(
-                  onTap: null,
-          ),
-                child: Wrap(
-            direction: Axis.vertical,
-                spacing: 10,
-                color: Color(0xFF50CFFD),
-                elevation: 3.0,
-                margin: EdgeInsets.all(7.0),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                child: Container(
-                  child: Align(
-                      alignment: http://Alignment.center,
-                      child: Container(
-                        child: Text('Heelo',
-                            style: TextStyle(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            )),
-                      )),
-                ),
-              ),
-            ),
-          ),*/

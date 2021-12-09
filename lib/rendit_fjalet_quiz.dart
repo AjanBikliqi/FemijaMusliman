@@ -77,6 +77,8 @@ class _RenditFjaletScreenState extends State<RenditFjaletScreen> {
                                         builder: (context) =>
                                             RenditFjaletButton(
                                               QuizList: data[index].word,
+                                              AllQuizLists: data,
+                                              CurrentIndex: index,
                                             )));
                               },
                               child: Card(

@@ -15,8 +15,10 @@ class QuizDescription {
 }
 
 class RenditFjaletButton extends StatefulWidget {
-  RenditFjaletButton({required this.QuizList, Key? key}) : super(key: key);
+  RenditFjaletButton({required this.QuizList, required this.AllQuizLists, required this.CurrentIndex, Key? key}) : super(key: key);
+  late List AllQuizLists;
   late List QuizList;
+  late int CurrentIndex;
 
   @override
   State<RenditFjaletButton> createState() => _RenditFjaletButtonState();
@@ -356,9 +358,17 @@ class _RenditFjaletButtonState extends State<RenditFjaletButton>
                                                                   .title;
                                                               setState(() {});
                                                             }
-                                                            Navigator.of(
-                                                                    context)
-                                                                .pop(result);
+                                                            Navigator.pop(context); /// Closes the menu
+                                                            Navigator.pop(context); /// Closes the current quiz page
+                                                            Navigator.push( /// Opens the next quiz page
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder: (context) =>
+                                                                        RenditFjaletButton(
+                                                                          QuizList: widget.AllQuizLists[widget.CurrentIndex+1].word,
+                                                                          AllQuizLists: widget.AllQuizLists,
+                                                                          CurrentIndex: widget.CurrentIndex+1,
+                                                                        )));
                                                           },
                                                           child: Image.asset(
                                                             'assets/next_small.png',

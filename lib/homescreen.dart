@@ -1,3 +1,4 @@
+import 'package:femija_musliman/kuizLevels.dart';
 import 'package:femija_musliman/rreth_nesh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -130,7 +131,12 @@ class ChooseQuiz extends StatelessWidget {
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Kuizi()));
+                  },
                 ),
               )),
         ),

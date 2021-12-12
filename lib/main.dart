@@ -147,7 +147,6 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                   height: 12.0.h,
                   width: 56.0.w,
-                  //color: Colors.transparent,
                   child: Container(
                     child: FlatButton(
                       color: Color(0xFF50CFFD),
